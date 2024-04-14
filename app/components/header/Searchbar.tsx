@@ -10,10 +10,13 @@ function Searchbar () {
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndtDate] = useState(new Date())
   const selectionRange = {
-    startDate: new Date(),
-    endDate: new Date(),
+    startDate,
+    endDate,
     key: 'selection',
   };
+  const handleSelect = (ranges) => {
+    console.log(ranges.selection)
+  }
   return (
     <>
       <div className="flex items-center md:border-2 rounded-full py-2 ">
@@ -29,6 +32,7 @@ function Searchbar () {
       { input && <div className=" absolute bg-white p-3 top-[100%] left-[50%] flex flex-col col-span-3 mx-auto translate-x-[-50%] ">
         <DateRangePicker
           ranges={ [selectionRange] }
+          onChange={handleSelect}
         />
       </div> }
     </>
