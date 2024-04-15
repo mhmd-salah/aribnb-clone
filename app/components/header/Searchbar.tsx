@@ -14,8 +14,12 @@ function Searchbar () {
     endDate,
     key: 'selection',
   };
-  const handleSelect = (ranges) => {
-    console.log(ranges.selection)
+  const handleSelect = (ranges:any) => {
+    console.log(ranges.selection.startDate)
+    setStartDate(ranges.selection.startDate) 
+    setEndtDate(ranges.selection.endDate);
+    console.log("start -------------"+startDate)
+    console.log("end -------------" + endDate)
   }
   return (
     <>

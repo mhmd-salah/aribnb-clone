@@ -1,11 +1,11 @@
 import React from 'react';
 import { getLive } from '../utils/api';
 import { LiveData } from '../types/app';
-import LiveCard from './LiveCard';
+import LiveCard from './LiveCard' ;
 
 async function Live () {
   const liveData: LiveData = await getLive();
-  console.log(liveData);
+  // console.log(liveData);
   return (
     <section className='pt-6'>
       <div className='container'>

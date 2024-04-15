@@ -20,10 +20,10 @@ function Greats (props: CreateProps) {
         />
       </div>
       <div className="absolute top-32 left-12">
-        <h3 className="text-4xl mb-3 w-64">{ props.title }</h3>
-        <p>{ props.description }</p>
+        <h3 className=" text-[34px] md:text-5xl text-white font-bold  mb-3 ">{ props.title }</h3>
+        <p className="text-lg text-white">{ props.description }</p>
         <Link
-          className='text-sm px-4 py-2 rounded-lg mt-5 block text-white  w-fit bg-gray-900'
+          className='text-sm px-4 py-2 rounded-lg mt-5 block text-black  w-fit bg-white'
           href={"/"}
         >
           { props.linkText }
