@@ -9,7 +9,7 @@ const Banner = () => {
         className="object-cover object-left "
         fill
       />
-      <div className="absolute top-1/2 text-center w-full z-10 ">
+      <div className="absolute top-1/2 -translate-y-[50%] text-center w-full z-10 ">
         <p className="text-[20px] mb-4 md:text-[40px] font-bold md:mb-8 text-white ">Not sure where to go ? Prefect.</p>
         <button
           className=" bg-white px-8 py-3 shadow-md rounded-full font-bold"

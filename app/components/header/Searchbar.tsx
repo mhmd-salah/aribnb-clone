@@ -3,7 +3,7 @@ import { SearchIcon } from "@heroicons/react/solid";
 import { useState } from "react";
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
-import { DateRangePicker } from "react-date-range";
+import { DateRangePicker, RangeKeyDict } from "react-date-range";
 
 function Searchbar () {
   const [input, setInput] = useState("");
@@ -14,12 +14,8 @@ function Searchbar () {
     endDate,
     key: 'selection',
   };
-  const handleSelect = (ranges:any) => {
+  const handleSelect = (ranges: RangeKeyDict) => {
     console.log(ranges.selection.startDate)
-    setStartDate(ranges.selection.startDate) 
-    setEndtDate(ranges.selection.endDate);
-    console.log("start -------------"+startDate)
-    console.log("end -------------" + endDate)
   }
   return (
     <>
