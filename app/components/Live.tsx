@@ -5,7 +5,6 @@ import LiveCard from './LiveCard' ;
 
 async function Live () {
   const liveData: LiveData = await getLive();
-  // console.log(liveData);
   return (
     <section className='pt-6'>
       <div className='container'>
