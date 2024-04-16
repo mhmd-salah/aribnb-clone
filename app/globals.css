@@ -19,3 +19,8 @@
 .no-scrollbar::-webkit-scrollbar {
     display: none;
 }
+@layer components {
+  .button{
+    @apply px-2 py-1 bg-gray-100 rounded-md text-[#222] hover:bg-gray-200 cursor-pointer transition active:scale-[.97] select-none ease-out
+  }
+}
