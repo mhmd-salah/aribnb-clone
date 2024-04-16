@@ -1,7 +1,6 @@
 import React from 'react';
 import Banner from './components/Banner';
 import Live from './components/Live';
-import ExploreCard from './components/ExploreCard';
 import Explore from './components/Explore';
 import Greats from './components/Greats';
 import Header from './components/header/Header';

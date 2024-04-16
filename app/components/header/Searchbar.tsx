@@ -10,7 +10,8 @@ function Searchbar ({ placeholder }:{placeholder?:string}) {
   const [input, setInput] = useState("");
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndtDate] = useState(new Date())
-  const [numOfGuest,setNumOfGuest] = useState(1)
+  const [numOfGests, setNumOfGuests] = useState(1)
+  console.log(numOfGests + "====")
   const selectionRange = {
     startDate,
     endDate,
@@ -45,9 +46,9 @@ function Searchbar ({ placeholder }:{placeholder?:string}) {
           <input
             type="number"
             className="w-12 pl-2 text-lg outline-none text-red-400"
-            value={numOfGuest}
+            value={numOfGests}
             min={1}
-            onChange={e=>setNumOfGuest(parseInt(e.target.value))}
+            onChange={e=>setNumOfGuests(parseInt(e.target.value))}
           />
 
         </div>
@@ -59,7 +60,7 @@ function Searchbar ({ placeholder }:{placeholder?:string}) {
           >Cancel</button>
           <Link
             href={
-              { pathname: "/search", search :`?location=${input}&startDate=${startDate.toISOString()}&endDate=${endDate.toISOString()}&numOfGuests=${numOfGuest}`}
+              { pathname: "/search", search :`?location=${input}&startDate=${startDate.toISOString()}&endDate=${endDate.toISOString()}&numOfGests=${numOfGests}`}
             }
             className="flex-grow text-red-500 text-center hover:bg-gray-100 p-2 rounded-md"
             onClick={()=> setInput("")}
