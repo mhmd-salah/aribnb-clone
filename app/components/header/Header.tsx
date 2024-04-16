@@ -4,7 +4,7 @@ import React from 'react';
 import Searchbar from './Searchbar';
 import Navbar from './Navbar';
 
-function Header () {
+function Header ({ placeholder }: { placeholder?: string; }) {
   return (
     <header className='sticky top-0 z-50 bg-white shadow-sm py-5 '>
       <div className='container grid grid-cols-3 '>
@@ -18,7 +18,7 @@ function Header () {
           />
         </Link>
 
-        <Searchbar/>
+        <Searchbar placeholder={ placeholder} />
 
         <Navbar/>
       </div>

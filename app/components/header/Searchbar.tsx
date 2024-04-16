@@ -6,7 +6,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker, RangeKeyDict } from "react-date-range";
 import Link from "next/link";
 
-function Searchbar () {
+function Searchbar ({ placeholder }:{placeholder?:string}) {
   const [input, setInput] = useState("");
   const [startDate, setStartDate] = useState(new Date())
   const [endDate, setEndtDate] = useState(new Date())
@@ -25,7 +25,7 @@ function Searchbar () {
       <div className="flex items-center md:border-2 rounded-full py-2 ">
         <input
           type="text"
-          placeholder="Search"
+          placeholder={placeholder || "search" }
           className="text-sm text-gray-600 placeholder-gray-400 flex-grow pl-5 bg-transparent outline-none"
           value={ input }
           onChange={ e => { setInput(e.target.value); } }
@@ -47,7 +47,7 @@ function Searchbar () {
             className="w-12 pl-2 text-lg outline-none text-red-400"
             value={numOfGuest}
             min={1}
-            onChange={e=>setNumOfGuest(Number(e.target.value))}
+            onChange={e=>setNumOfGuest(parseInt(e.target.value))}
           />
 
         </div>
@@ -59,7 +59,7 @@ function Searchbar () {
           >Cancel</button>
           <Link
             href={
-              { pathname: "/search", search :`?location=${input}`}
+              { pathname: "/search", search :`?location=${input}&startDate=${startDate.toISOString()}&endDate=${endDate.toISOString()}&numOfGuests=${numOfGuest}`}
             }
             className="flex-grow text-red-500 text-center hover:bg-gray-100 p-2 rounded-md"
             onClick={()=> setInput("")}
