@@ -2,11 +2,11 @@ import Image from "next/image";
 
 const Banner = () => {
   return (
-    <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[500px] ">
+    <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] xl:h-[84vh]  ">
       <Image
         src='/pexels-asad-photo-maldives-1591361.jpg'
         alt="this landing img"
-        className="object-cover object-left "
+        className="object-cover object-left rounded-md"
         fill
       />
       <div className="absolute top-1/2 -translate-y-[50%] text-center w-full z-10 ">

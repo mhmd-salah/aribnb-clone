@@ -4,6 +4,7 @@ import { useState } from "react";
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRangePicker, RangeKeyDict } from "react-date-range";
+import Link from "next/link";
 
 function Searchbar () {
   const [input, setInput] = useState("");
@@ -49,6 +50,20 @@ function Searchbar () {
             onChange={e=>setNumOfGuest(Number(e.target.value))}
           />
 
+        </div>
+        <div className="flex items-center">
+          <button
+            type="button"
+            className="flex-grow text-gray-600 hover:bg-gray-100 p-2 rounded-md"
+            onClick={()=>setInput("")}
+          >Cancel</button>
+          <Link
+            href={
+              { pathname: "/search", search :`?location=${input}`}
+            }
+            className="flex-grow text-red-500 text-center hover:bg-gray-100 p-2 rounded-md"
+            onClick={()=> setInput("")}
+          >Search</Link>
         </div>
       </div> }
     </>
