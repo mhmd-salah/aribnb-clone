@@ -27,7 +27,7 @@ async function SearchResult ({ searchParams: { location, startDate, endDate, num
     "Rooms and Beds",
     "More Filters"
   ];
-  const searchReusltData:SearchReulstData = await getSearchResult()
+  const searchReusltData: SearchReulstData = await getSearchResult();
   return (
     <>
       <Header placeholder={ `${location} | ${range} | ${numOfGests} Guests` } />
@@ -49,20 +49,22 @@ async function SearchResult ({ searchParams: { location, startDate, endDate, num
                 <button type="button" className="button" key={ btn }>{ btn }</button>
               )) }
             </div>
-            {
-              searchReusltData.map(list => (
-                <ListingCard
-                  key={ list.title }
-                  img={ list.img }
-                  title={ list.title }
-                  location={ list.location }
-                  description={ list.description }
-                  price={ list.price }
-                  total={ list.total }
-                  star={list.star}
-                />
-              ))
-            }
+            <div className="cards mb-8">
+              {
+                searchReusltData.map(list => (
+                  <ListingCard
+                    key={ list.title }
+                    img={ list.img }
+                    title={ list.title }
+                    location={ list.location }
+                    description={ list.description }
+                    price={ list.price }
+                    total={ list.total }
+                    star={ list.star }
+                  />
+                ))
+              }
+            </div>
           </div>
         </section>
       </main>
