@@ -2,6 +2,8 @@ import { format } from "date-fns";
 import Footer from "../components/Footer";
 import Header from "../components/header/Header";
 import { getSearchResult } from "../utils/api";
+import { SearchReulstData } from "../types/app";
+import ListingCard from "../components/ListingCard";
 
 type SearchParams = {
   location: string;
@@ -25,7 +27,7 @@ async function SearchResult ({ searchParams: { location, startDate, endDate, num
     "Rooms and Beds",
     "More Filters"
   ];
-  const searchReusltData = await getSearchResult()
+  const searchReusltData:SearchReulstData = await getSearchResult()
   return (
     <>
       <Header placeholder={ `${location} | ${range} | ${numOfGests} Guests` } />
@@ -47,6 +49,20 @@ async function SearchResult ({ searchParams: { location, startDate, endDate, num
                 <button type="button" className="button" key={ btn }>{ btn }</button>
               )) }
             </div>
+            {
+              searchReusltData.map(list => (
+                <ListingCard
+                  key={ list.title }
+                  img={ list.img }
+                  title={ list.title }
+                  location={ list.location }
+                  description={ list.description }
+                  price={ list.price }
+                  total={ list.total }
+                  star={list.star}
+                />
+              ))
+            }
           </div>
         </section>
       </main>

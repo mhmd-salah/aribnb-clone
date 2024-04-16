@@ -8,7 +8,7 @@ export type LiveItem = {
   img: string,
   title:string,
 }
-export type ListingCard = {
+export type ListingCardItem = {
   img: string,
   location: string,
   title: string,
@@ -21,4 +21,4 @@ export type ListingCard = {
 }
 export type ExploreData = ExploreItem[];
 export type LiveData = LiveItem[];
-export type SearchReulstData = ListingCard[];
+export type SearchReulstData = ListingCardItem[];
